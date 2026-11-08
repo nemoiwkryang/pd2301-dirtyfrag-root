@@ -1,0 +1,65 @@
+# 归档校验清单
+
+目标设备: iQOO Neo8 PD2301/V2301A, 内核 5.10.233-gki-g7c15030f5dfa
+随包 ko vermagic: 5.10.246-gki-g8c3d0d7851ff (same_magic 跳前缀匹配)
+结果: ROOT 达成（KernelSU late-load）
+说明: 不含成品 APK，需自行构建
+
+## 文件 sha256
+
+```
+530c22df9d67ce143d1c8a1a819c6e93901a470b3be9d26426e9580839e75b99  ./artifacts/libbootstrap.so
+3e856cef234325e0d68fa5db323f2694f56d305d2b8443560b50555ad8b3b24a  ./artifacts/libdfroot.so
+e892d82f4fcd4f33e5347e2f5ee2b592836ed925f260f85931bfb182913a163f  ./artifacts/self-built-v2-FAILS.ko
+40374c7f5a9a09b63565932e47662738654f1e27ee613add2ae0d2407c9c5de8  ./docs/cve-98260-constants.md
+231f7f9dc6b29bfea87e59fe30d8ee1c86bbd7f364512d04305779b52860ec60  ./docs/original-plan.md
+47fc87f4f4450584ac1c6a44608e3b33a8a999b3d791733812997e74a8315b88  ./docs/README.md
+4fe86a3d721f3ee33a46a1b803941547cb37dd7a5df3ee2bbc26da80a5c4e825  ./docs/upstream-analysis.md
+f323c152926d35cf56a7be2e047820fe1eb4c1500b9d32da7f26ed3a131a8b8c  ./docs/upstream-readme.md
+3a8c5622fb921d2334148b2e3a15e2ad029530745d126cab4de98608093616a8  ./.gitignore
+2504ee6ba280b5b60aeadce220060cb85fd16a1f5e91c9aa4c9e7172b3126e8f  ./kernel/device.config
+c833a0df149de1902168264b4d8dc209b192c764fd38db78b8ab99e38e7871b2  ./LICENSE
+e7775dc3e52701b672996bb983a6f027f1d05d56471c92fb0b8e42dd697128e4  ./NOTICE
+b41fd1fb6f9430e4b77d8e2f604609744c8deacd280ff7dff4ba574b909e952a  ./README.md
+ab94c4981aa9e2d1a0b4fa7c9e2e5c456d01c6960215f435eaeb26fbfdd67511  ./scripts/build-dfroot.sh
+205e6295b094d20261f686ca816be3db4cded8dbbbfd8d586b6b707c3980254c  ./scripts/zero-versions.py
+ff269df88b31bcca48c39c58f9834a077a31c1436cfbdf037b774892a9117a55  ./src/AndroidManifest.xml
+9fe73de612136a2da0b15ffbb1a8cd7b814ffb721a31788916f6eeabd3acb13d  ./src/app-build.gradle.kts
+a5a99581bb36e05525c271114fc42f065333c1cfe7f9c6b0982bec7bcd5bbe9a  ./src/java/DirtyFragRunner.kt
+e269b6f5e98473e1017a0c3d8ef66a70886ac142b7000af39d18ae3436df7cf0  ./src/java/HistoryStore.kt
+6fc0c512976d5bc0d971a8c00617ac4f1382ea27ed5459dedc8fe198e394ecbb  ./src/java/IReporter.kt
+c510ccc2019062b82a0b68d66adde15808c42b5836c9221f7617d9d7d1349f38  ./src/java/MainActivity.kt
+0d4b992a9d4c550e400c28981603c6730945935278427f3e66fe1e1f9db7ef23  ./src/java/ManualMarkdown.kt
+87d5f8d51ece7a25adb3de3f9165e2cb1cfdfbc6bce817dfb95fe64812042632  ./src/java/Privileged.kt
+66f5a25b001c3e217becc1993554d49f277a7a0154ca62c796a8f48cf12a2eda  ./src/jni/aes256.h
+5b19bfe9d4c632794d52de71a513d1bac2820e0fbd474ce19813913782111ce9  ./src/jni/bootstrap.c
+4a060819e4072db5d75b8ea123afe9c01e675d850544673ebff164966f745019  ./src/jni/CMakeLists.txt
+03500a7e5c635d46a92adc87b899a3eef2933c7c27cce3c66128cdd81d5ffb3e  ./src/jni/elf_parser.c
+8cdd5f119987af8a18e91bae441fd439984815d866a02416951ea7cb136abfbc  ./src/jni/exp.c
+4dd6a0ec50f83906a417f1167c36d26dadd9c0edce7267c4553cf51b72b2fe4a  ./src/jni/include.inc
+b267c4143438daf56abf05701e16ce560a1d8cbf7a847d0b12495747a8891c23  ./src/jni/ko/dfroot-android12-5.10.ko
+0b984489d4aee5745a1b9312094c9eeb9b740e55bd20cfaef8caf872e58216f4  ./src/jni/ko_select.h
+f053337d4790a6c68bee0eb40ee9201374f3c1d70dfcf0102ad7e4b64a80f9ca  ./src/jni/libcxx.S
+977741e8d5ac4b325e20eb1a2b21def505e5d6ad25b930bf6583c3dd908da64a  ./src/jni/splicehelper
+566eb19d33563a1745091cf1eac5b85db0dba74555f1a30624880175b15373ee  ./src/jni/splicehelper.c
+e75b914f4fbded515f2a23d22c8556967c3225fdfd2c5b06f60b6bb88b1f9464  ./src/jni/vivo_coredump_shim
+5056b7226b3f58e65a61739e8ab6f5c52099fccee3ae9aad0e8856f31709e3fa  ./src/res/mipmap-anydpi-v26/ic_launcher_round.xml
+5056b7226b3f58e65a61739e8ab6f5c52099fccee3ae9aad0e8856f31709e3fa  ./src/res/mipmap-anydpi-v26/ic_launcher.xml
+77713743113b0c478a6f9875b069b702fd14843f49383a79aa3ebad79508dfc8  ./src/res/mipmap-hdpi/ic_launcher_foreground.png
+226ea637ec7a94b9ade1cf78e75a2e5a349f27abea364a4de5e21f3091ba2f07  ./src/res/mipmap-hdpi/ic_launcher.png
+6b52637de6449741073f5e0340930d431cdeb06bc317981db6ec30674ef8961c  ./src/res/mipmap-mdpi/ic_launcher_foreground.png
+934a6df5dad19a5fb7ac7b6bae0a905c5621a7da07bbb2860ececc09a144f165  ./src/res/mipmap-mdpi/ic_launcher.png
+5a2ca52de60c6c5d606c790b1d2befdce139cae7c324184317894599dd9d09cd  ./src/res/mipmap-xhdpi/ic_launcher_foreground.png
+35f3fa95fd28fb4e462e23dca77a8c908fa013dcde74ca4965b554e1430576f7  ./src/res/mipmap-xhdpi/ic_launcher.png
+ad1fc1b134b34f4c7da42799ec81604760b5a1ca0c3ffd52b83e12835d80ea25  ./src/res/mipmap-xxhdpi/ic_launcher_foreground.png
+ebdd9862fafa1a0e021a014d6ff110b5320681df08fb8aa9bff23334ca3720ca  ./src/res/mipmap-xxhdpi/ic_launcher.png
+d7e42d9181b3727495e18f454ac8c6f18f7454b2008c66db4a0ddd2cfb49e20b  ./src/res/mipmap-xxxhdpi/ic_launcher_foreground.png
+f924c712e6e6fcad633d346260f0d6dc46310ffb72137d8b30cfa5af68010129  ./src/res/mipmap-xxxhdpi/ic_launcher.png
+7329e8882cce1b0c898bffb626264a7e90c943558508fcf00f912d7f53cdaf2a  ./src/res/values/colors.xml
+d2536ba01d021142be2300003cd1f50edc5a75b420993a6d3d5faac9ea9e47ac  ./src/res/values-night/themes.xml
+f6b55c0aa41075f34c04a312ef89f27a3d65e870cc0636da29f4ace13e66d869  ./src/res/values/themes.xml
+327cf7130e7b3e72ea31b2a2721ee08158fbcd2d2cac1e6ee51bb1cd8b27bc0c  ./src/res/xml/file_paths.xml
+7ca8c61ffc28c47f9985006b3e037bfce08a953e290319a713a375e1c4d361e7  ./src/res/xml/network_security_config.xml
+4dc2fde8b868f7f6447f58a0a5c9e121b440c84734524b13901d1037c717d25e  ./src/root-build.gradle.kts
+a60ca35996f9bb99f35120fd95c472ab705778166b6e2c49d79c0e73a81cc52a  ./src/settings.gradle.kts
+```
