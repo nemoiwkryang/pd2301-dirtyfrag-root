@@ -1,0 +1,77 @@
+Third-party components
+======================
+
+本归档（iQOO Neo8 PD2301/V2301A DirtyFrag 临时 root）包含或派生自以下组件。
+许可关系见文末「许可结构说明」。
+
+
+1. DirtyFrag / DFRoot  —— 主要利用链
+   Source: mitschud/DirtyFrag（上游）
+           经第三方分发的 app-release.apk 提取
+   License: **GPL-2.0-only**
+   Used: src/jni/exp.c、src/jni/libcxx.S、src/jni/elf_parser.c、
+         src/jni/splicehelper.c、src/jni/include.inc 等派生自其源码；
+         src/jni/ko/dfroot-android12-5.10.ko（14,120B）为其 LKM 二进制，
+         从第三方分发 APK 的 lib/arm64-v8a/libdfroot.so 偏移 0x12d0..0x49f8 提取。
+         注意：该 ko 非官方 release 哈希，来源为第三方构建，仅作研究用途。
+         strings 确认其 .modinfo 含 license=GPL。
+
+2. OnePlus 16 Jailbreak  —— 项目骨架与文档参考
+   Source: Yunnijian/OnePlus16-Jailbreak
+   License: MIT
+   Used: 构建脚本结构、PLAN 文档框架（见 docs/original-plan.md）。
+
+3. KernelSU
+   Source: https://github.com/tiann/KernelSU
+   License: GPL-2.0
+   Used: 运行时由用户在设备侧安装其管理器与 ksud；本归档**不分发**其代码或二进制。
+
+4. BakaSU (formerly ReSukiSU)
+   Source: https://github.com/Baka-SU/BakaSU
+   License: GPL-2.0
+   Used: 同上，仅作为可选的 root 管理器目标，本归档不分发。
+
+5. Miuix
+   Source: https://github.com/miuix-kotlin-multiplatform/miuix
+   License: Apache-2.0
+   Used: App UI 组件（gradle 依赖，不随归档分发源码）。
+
+6. Shizuku API / Stellar
+   Source: https://github.com/RikkaApps/Shizuku-API,
+           https://github.com/roro2239/Stellar
+   License: Apache-2.0 / MPL-2.0
+   Used: 远程执行后端（gradle 依赖）。本归档的分支中未启用其核心路径。
+
+7. AES-256 实现（aes256.h）
+   Used: compute_iv() 需要的 AES-256 ECB 单块解密，随 DirtyFrag 源码分发。
+   License: 随上游 DirtyFrag（GPL-2.0-only）。
+
+8. Android NDK 工具链产物
+   artifacts/libdfroot.so、artifacts/libbootstrap.so、src/jni/splicehelper、
+   src/jni/vivo_coredump_shim 均由 Android NDK（LLVM）构建，含标准 runtime stub。
+   License: Apache-2.0 (LLVM exception) / BSD-style，见 NDK NOTICE。
+
+
+=====================
+许可结构说明
+=====================
+
+- 本归档的**原创部分**（README、脚本、vivo_coredump_shim、Kotlin 侧改动、
+  文档）以 **MIT** 发布，见 LICENSE。
+- 派生自 DirtyFrag/DFRoot 的 C/汇编源码，以及 ko/dfroot-android12-5.10.ko
+  二进制，**受 GPL-2.0-only 约束**。若再分发这些文件或基于它们构建的二进制，
+  须遵守 GPL-2.0-only（提供对应源码、保留许可声明）。
+- MIT 与 GPL-2.0 混合分发在聚合（aggregation）意义下是允许的：
+  GPL 组件保持 GPL，MIT 组件保持 MIT，二者不构成单一衍生作品。
+- **本归档不分发** KernelSU 系管理器 APK 或 ksud 二进制；使用者需自行从上游获取。
+- **本归档不含成品利用 APK**（app-debug.apk 已移除），仅保留构建产物
+  libdfroot.so / libbootstrap.so 与一个加载失败的自编 ko 对照样本。
+
+
+=====================
+研究用途声明
+=====================
+
+本项目仅用于**自有设备的漏洞研究与兼容性验证**。作者不对任何未经授权
+使用、或由此造成的设备损坏、数据丢失、保修失效承担责任。使用前请确认
+你对目标设备拥有完整所有权，并了解相关法律与厂商条款。
