@@ -1,0 +1,28 @@
+# build outputs
+build/
+.gradle/
+*.apk
+local.properties
+.gradle.properties
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 凭据（永不提交）
+*.keystore
+*.jks
+*.p12
+*.pem
+id_rsa*
+.env
+.env.*
+
+# 临时
+*.log
+*.raw
